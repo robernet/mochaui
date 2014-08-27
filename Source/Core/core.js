@@ -128,6 +128,13 @@ MUI.append({
 		return el;
 	},
 
+        getData: function(item, property, dfault){
+                if (!dfault) dfault = '';
+                if (!item || !property) return dfault;
+                if (item[property] == null) return dfault;
+                return item[property];
+        },
+
 	get: function(el){
 		var id = this.getID(el);
 		el = $(id);
